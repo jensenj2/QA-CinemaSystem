@@ -1,0 +1,20 @@
+ENCAPSULATION
+Encapsulation refers to the practice of binding an object's state (data) along with its behaviour (methods). The purpose of this is to hide details of implementation from users - this is why it is commonly known as 'data hiding.'
+
+Example: in Java, we can set a variable's visibility modifier to 'private' if we do not want it to be directly accessible from outside of that class. To provide a cleaner way of accessing these variables, we can use public methods within the same class. These methods are known as mutator ("setter") and accessor ("getter") methods. For example, a class named 'Point' represents a point in 2D space. Assuming it has two instance variables 'x' and 'y', the accessor and mutator methods would be named 'getX, getY' and 'setX, setY' respectively. 
+
+INHERITANCE
+Inheritance refers to the practice of one class acquiring the data and methods of another class. The class that inherits the features is known as a 'child', while the class that passes down its features is known as a 'parent.' The purpose of inheritance is to enable code reuse and allow classes to only have to implement features that are unique to itself.
+
+Example: assume a Java class called 'Student.' If we wished to include the concept of more specific types of student in our code, we may develop further classes such as 'BusinessStudent' or 'PhysicsStudent.' However, these students still contain all of the features that a generic Student does. The child classes 'BusinessStudent' and 'PhysicsStudent' have an 'IS-A' relationship with the parent class, 'Student.' For example, the declaration of the PhysicsStudent class would read:
+'public class PhysicsStudent extends Student'
+
+POLYMORPHISM
+Polymorphism refers to the capability of a method to behave in different ways, depending on the object that it is acting upon. Despite having only one declaration, we can have multiple implementations. This can be achieved by, for example, method overloading or method overriding.
+
+Example: assume an 'Animal' class, with a 'cry' method. The purpose of this method is to print the animal's cry to standard output. However, this method doesn't make much sense in a generic 'Animal' class, as the animal could be anything. So instead, we could override this method (using @Override) in the child classes. For example, the 'Dog' subclass could print 'woof!' to standard output, and the 'Cat' class could print 'meow!' The method in question is still 'cry', but we define extra implementations for the classes that require it. 
+
+ABSTRACTION
+Abstraction refers to the technique of arranging the complexity of programs and computer systems. By establishing a well-defined level of complexity, the more complex and extraneous details can be suppressed below. Two ways of demonstrating abstraction in Java include encapsulation (mentioned above) and abstract classes.
+
+For example, using the scenario from above - if we define a superclass 'Student' and two child classes 'BusinessStudent' and 'PhysicsStudent', declaring 'Student' as an abstract class means that we cannot instantiate it. Instead, we must instantiate one of the subclasses. This hides the details of the 'Student' object and creates another level of abstraction, as we will only directly see the child classes.
